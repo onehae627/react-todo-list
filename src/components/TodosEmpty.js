@@ -5,7 +5,7 @@ export default function TodosEmpty() {
     return (
         <>
          <div className="flex-1 flex justify-center items-center">
-            <div  className="grid">
+            <div  className="grid gap-2">
                 <span>
                 <span className="text-[color:var(--mui-color-primary-main)]">할 일</span>을 입력해주세요.
                 </span>

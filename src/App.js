@@ -19,7 +19,7 @@ function App() {
             {location.pathname != "/write" &&
             <NavLink to="/write">글쓰기</NavLink>}
             {location.pathname == "/write" &&
-            <NavLink to="/main">이전</NavLink>}
+            <NavLink to="/main">메인</NavLink>}
           </div>
         </Toolbar>
       </AppBar>
