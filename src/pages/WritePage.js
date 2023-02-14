@@ -1,7 +1,9 @@
 import { TextField, Button } from "@mui/material";
-import { useTodosStatus } from "../hook";
+import { useNoticeSnackbarStatus } from "../components/NoticeSnackbar";
+import { useTodosStatus } from "../hooks";
 
 export default function WritePage() {
+  const noticeSnackbarStatus = useNoticeSnackbarStatus();
   const todosStatus= useTodosStatus();
   const onSubmit = (e) => {
     e.preventDefault();
@@ -23,8 +25,14 @@ export default function WritePage() {
 
       return;
     }
-    todosStatus.addTodo(form.regDate.value, form.content.value);
-  } 
+    const newTodoId = todosStatus.addTodo(
+      form.regDate.value,
+      form.content.value
+    );
+
+    noticeSnackbarStatus.open(`${newTodoId}번 할일이 추가되었습니다.`);
+  };
+  
     return (
       <>
         <form className="flex-1 flex p-10 flex-col gap-7" onSubmit={onSubmit}>            

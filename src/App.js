@@ -4,7 +4,7 @@ import { Routes, Route, Navigate, useLocation, NavLink } from "react-router-dom"
 
 import MainPage from "./pages/MainPage";
 import WritePage from "./pages/WritePage";
-import NoticeSnackbar from "./components/NoticeSnackbar";
+import { NoticeSnackbar } from "./components/NoticeSnackbar";
 
 
 function App() {

@@ -3,7 +3,7 @@ import { Snackbar, Alert as MuiAlert } from "@mui/material";
 import { atom, useRecoilState } from "recoil";
 
 
-const noticeSnackbarInfoAtom = atom({
+export const noticeSnackbarInfoAtom = atom({
     key : "app/noticeSnackbarInfoAtom",
     default: {
       opened: false,
@@ -14,7 +14,7 @@ const noticeSnackbarInfoAtom = atom({
   })
 
 
-  function useNoticeSnackbarStatus() {
+  export function useNoticeSnackbarStatus() {
 
     const [noticeSnackbarInfo, setNoticeSnackbarInfo] = useRecoilState(noticeSnackbarInfoAtom)
   
@@ -50,7 +50,7 @@ const noticeSnackbarInfoAtom = atom({
     }
   }
 
-const Alert = React.forwardRef((props, ref) => {
+  export const Alert = React.forwardRef((props, ref) => {
     return (
       <MuiAlert {...props} ref={ref} variant="filled" />
     )
@@ -58,7 +58,7 @@ const Alert = React.forwardRef((props, ref) => {
 
 
 
-export default function NoticeSnackbar() {
+export function NoticeSnackbar() {
     const status = useNoticeSnackbarStatus();
     return(
     <>
