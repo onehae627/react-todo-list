@@ -42,21 +42,22 @@ export function useTodosStatus() {
     return id;
   };
 
-  const modifyTodo = (index, newContent) => {
-    const newTodos = todos.map((todo, _index) =>
-      _index != index ? todo : { ...todo, content: newContent }
-    );
+  const modifyTodo = (index, content, regDate) => {
+    const newTodos =produce(todos, (draft) => {
+      draft[index].regDate = dateToStr(new Date(regDate));
+      draft[index].content = content;
+    });
     setTodos(newTodos);
   };
 
-  const modifyTodoById = (id, newContent) => {
+  const modifyTodoById = (id, newContent, regDate) => {
     const index = findTodoIndexById(id);
 
     if (index == -1) {
       return;
     }
 
-    modifyTodo(index, newContent);
+    modifyTodo(index, newContent, regDate);
   };
 
   const removeTodo = (index) => {
