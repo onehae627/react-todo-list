@@ -1,6 +1,8 @@
 import { TextField, Button } from "@mui/material";
+import { useTodosStatus } from "../hook";
 
 export default function WritePage() {
+  const todosStatus= useTodosStatus();
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -21,6 +23,7 @@ export default function WritePage() {
 
       return;
     }
+    todosStatus.addTodo(form.regDate.value, form.content.value);
   } 
     return (
       <>
