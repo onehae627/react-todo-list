@@ -14,13 +14,13 @@ function App() {
     <>
       <AppBar position="static">
         <Toolbar>
-          <div className="flex-1"></div>
-          <span className="font-bold select-none">앱 이름</span>
+          <span className="font-bold select-none">ordinary days</span>
           <div className="flex-1 flex justify-end">
-            {location.pathname != "/write" &&
+            {location.pathname == "/main" &&
             <NavLink to="/write">할 일 추가</NavLink>}
-            {location.pathname == "/write" &&
-            <NavLink to="/main">리스트</NavLink>}
+            {location.pathname != "/main" &&
+            <NavLink to="/main">리스트
+            </NavLink>}
           </div>
         </Toolbar>
       </AppBar>
