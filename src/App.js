@@ -15,14 +15,14 @@ function App() {
     <>
       <AppBar position="static">
         <Toolbar>
-          <span className="font-bold select-none">ordinary days</span>
-          <div className="flex-1 flex justify-end">
+          <NavLink to="/main" className="font-bold select-none self-stretch flex items-center mr-auto">ordinary days</NavLink>
+
             {location.pathname == "/main" &&
-            <NavLink to="/write"  className="slect-none">할 일 추가</NavLink>}
+            <NavLink to="/write"  className="slect-none self-stretch flex items-center">할 일 추가</NavLink>}
             {location.pathname != "/main" &&
-            <span to="/main" className="slect-none" onClick={(() => navigate(-1))}>리스트
+            <span to="/main" className="slect-none cursor-pointer self-stretch flex items-center" onClick={(() => navigate(-1))}>리스트
             </span>}
-          </div>
+          
         </Toolbar>
       </AppBar>
       <NoticeSnackbar/>
