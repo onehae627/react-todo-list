@@ -31,12 +31,13 @@ export default function EditPage() {
       return;
     }
 
-    const newTodoId = todosStatus.addTodo(
+    const newTodoId = todosStatus.modifyTodoById(
+      todo.id,
       form.performDate.value,
       form.content.value
     );
 
-    noticeSnackbarStatus.open(`${newTodoId}번 할 일이 수정되었습니다.`);
+    noticeSnackbarStatus.open(`${todo.id}번 할 일이 수정되었습니다.`);
 
     navigate(-1);
   };
@@ -71,5 +72,5 @@ export default function EditPage() {
         </Button>
       </form>
     </>
-  );
+  );                                      
 }

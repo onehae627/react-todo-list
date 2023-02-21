@@ -33,7 +33,7 @@ export function useTodosStatus() {
 
     const newTodo = {
       id,
-      regDate: dateToStr(new Date()),
+      performDate: dateToStr(new Date()),
       performDate: dateToStr(new Date(performDate)),
       content: newContent,
       completed: false,
@@ -58,8 +58,8 @@ export function useTodosStatus() {
     if (index == -1) {
       return;
     }
-
-    modifyTodo(index, newContent, performDate);
+                                  
+    modifyTodo(index,performDate, newContent);
   };
 
   const removeTodo = (index) => {
